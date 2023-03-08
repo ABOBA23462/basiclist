@@ -10,7 +10,7 @@ import com.example.basiclist.model.HomeModel
 class HomeAdapter(private val listBook: MutableList<HomeModel>, val onItemClick:(modelBook: HomeModel) ->Unit)
     : RecyclerView.Adapter<HomeAdapter.AdapterViewHolder>() {
 
-    inner class AdapterViewHolder( var binding: ItemListBinding)
+    inner class AdapterViewHolder(private var binding: ItemListBinding)
         :RecyclerView.ViewHolder(binding.root) {
         init {
             itemView.setOnClickListener{
