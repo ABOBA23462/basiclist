@@ -53,6 +53,7 @@ class HomeFragment : Fragment() {
         viewModel?.let { listBook.addAll(it.getListOfCatHTP())}
         binding.rvList.adapter = adapterBook
     }
+    
     private fun onItemClick(modelBook:HomeModel) {
         val action:NavDirections =
             HomeFragmentDirections.actionHomeFragmentToDetailFragment(
