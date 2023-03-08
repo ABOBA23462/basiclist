@@ -36,5 +36,4 @@ class DetailFragment : Fragment() {
             .load(logoPath)
             .into(binding.imgBook)
     }
-
 }
