@@ -32,16 +32,13 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
-
         setUpListeners()
         clear()
         initialization()
     }
 
     private fun setUpListeners() {
-
         binding.btnShow.setOnClickListener{
             binding.btnShow.isInvisible = true
             binding.rvList.isInvisible = false
