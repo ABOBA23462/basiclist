@@ -1,14 +1,17 @@
-package com.example.basiclist.viewmodel
+package com.example.basiclist.ui.fragments
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.basiclist.model.HomeModel
 
 class HomeViewModel : ViewModel() {
 
-    private var homeModelArrayList: ArrayList<HomeModel> = ArrayList()
+    private var list: MutableLiveData<ArrayList<HomeModel>> = MutableLiveData()
 
-    fun getListOfCatHTP(): ArrayList<HomeModel> {
-        homeModelArrayList.clear()
+    fun getListOfCatHTP(): MutableLiveData<ArrayList<HomeModel>> {
+
+        val homeModelArrayList: ArrayList<HomeModel> = ArrayList()
+
         homeModelArrayList.add(
             HomeModel(
                 "https://static.detmir.st/media_out/494/929/4929494/450/0.jpg?1662437224508",
@@ -45,6 +48,7 @@ class HomeViewModel : ViewModel() {
                 "Ведьмин котел"
             )
         )
-        return homeModelArrayList
+        list.value = homeModelArrayList
+        return list
     }
 }
